@@ -2,137 +2,174 @@
 # Dinah---ElectionAnalysis
 3rd Project on Boot Camp Exercise for Data Analystics
 
-Analysis of Kickstarter Campaigns
-Using Examples of US Successful and Failed Kickstarter Plays Goals and Pledges
-and GB Musical Goals and Pledges
-Kickstarting with Excel
-Overview of Project
-Louise’s play Fever came close to its fundraising goal in a short amount of time. Now, she wants to know how different campaigns fared in relation to their launch dates and their funding goals. Using the Kickstarter dataset visualize campaign outcomes based on their launch dates and their funding goals. This is a report based on your analysis and the visualizations.
+In this project, our final Python script will need to be able to deliver the following information when the script is run: 
 
-Purpose
-An assignment of two technical analysis deliverables and a written report on the results. To submit the following:
+Total number of votes cast
+A complete list of candidates who received votes
+Total number of votes each candidate received
+Percentage of votes each candidate won
+The winner of the election based on popular vote
 
-Deliverable 1: Outcomes Based on Launch Date Chart Deliverable 2: Outcomes Based on Goals Chart Deliverable 3: A written analysis of the results (README_Kickstarter_Callenge.md)
+To facilitate the design process, programmers use pseudocode to create models or flowcharts for their programs. Pseudocode is like a roadmap of what you think your code will look like or the steps you'll take to complete the task at hand.
 
-Analysis and Challenges
-Deliverable 1: Outcomes Based on Launch Date Chart
-Use pivot tables and graphing in Excel to visualize campaign outcomes ("successful," "failed," and "canceled") based on launch date.
-Rename the StarterBook.xlsx file you have been working with in this module: Kickstarter_Challenge.xlsx.
-Create a folder called “resources” to hold the PNGs of the two charts you will create.
-In the Kickstarter_Challenge.xlsx workbook, create a new column labeled "Years."
-In the "Years" column, use the YEAR() function to extract the year from the “Date Created Conversion” column.
-Create a pivot table from the KickStarter worksheet, and place the pivot table in a new sheet.
-Label the sheet "Theater Outcomes by Launch Date."
-Filter the pivot table based on "Parent Category" and "Years."
-Place the appropriate pivot table fields in the columns, rows, and values.
-Filter the column labels to show only "successful," "failed," and "canceled."
-Confirm that your pivot table looks like this:
-Filter the "Parent Category" to show only the data for "theater."
-Sort the campaign outcomes in descending order so "successful" is first.
-Confirm that your final pivot table looks like the given example
-Deliverable 2: Outcomes Based on Goals Chart
-Use your Excel skills to visualize the percentage of successful, failed, and canceled plays based on the funding goal amount.
+Pseudo means "fake," so pseudocode is essentially fake code. Pseudocode is an informal language that has no syntax rules and is not meant to be executed. The point of using pseudocode is to focus on the overall design of the program.
 
-You'll need to use a new function, COUNTIFS(), to collect the outcome and goal data for the “plays” subcategory.
+For example, let's say someone asks you how to wash clothes. You might break down this task into a series of basic steps, like this:
 
-In the KickStarter sheet, create a new sheet and label it "Outcomes Based on Goals."
+Open the lid of the washing machine.
+Put clothes in the washing machine.
+Turn on the water.
+Add detergent.
+Close the lid.
+These well-defined, logical steps that are sequentially ordered is an example of an algorithm.
 
-In the new sheet, create the following columns to hold the data: Goal Number Successful Number Failed Number Canceled Total Projects Percentage Successful Percentage Failed Percentage Canceled
+Similarly, a programmer or analyst may write the steps to count the votes of an election like this:
 
-In the “Goal” column, create the following dollar-amount ranges so projects can be grouped based on their goal amount.
+Open the data file.
+Write down the names of all the candidates.
+Add a vote count for each candidate.
+Get the total votes for each candidate.
+Get the total votes cast for the election.
 
-Use COUNTIFS() functions to populate the "Number Successful," "Number Failed," and "Number Canceled" columns by filtering on the Kickstarter "outcome" column, on the "goal" amount column using the ranges created in Step 3, and on the "Subcategory" column using "plays" as the criteria.
 
-Analysis of Outcomes Based on Launch Date
-Create a line chart from the pivot table to visualize the relationship between outcomes and launch month.
-Add a title to the line chart, and save it as Theater_Outcomes_vs_Launch.png to the resources folder.
-Theater_Outcomes_vs_Launch.png 
-![]
-https://github.com/Dybondzy/Dinah---KickStarter---Analysis/Theater_Outcomes_vs_Launch.png
+Launch VS Code and create a new file named PyPoll.py. Create a high-level list of the necessary steps given to you using pseudocode.
 
-Analysis of Outcomes Based on Goals
-Use the SUM() function to populate the "Total Projects" column with the number of successful, failed, and canceled projects for each row.
-Calculate the percentage of successful, failed, and canceled projects for each row.
-Create a line chart titled "Outcomes Based on Goal" to visualize the relationship between the goal-amount ranges on the x-axis and the percentage of successful, failed, or canceled projects on the y-axis.
-Confirm that your line chart looks like the following, and save it as Outcomes_vs_Goals.png to the resources folder.
-Outcomes_vs_Goals.png 
-![]
-https://github.com/Dybondzy/Dinah---KickStarter---Analysis/Outcomes_vs_Goals.png
+The election_results.csv file should be located in the Resources folder
 
-Challenges and Difficulties Encountered
-+++ In Deliverable 1, Theater_Outcomes_vs_Launch, the Goal: Greater than 50000, actually includes 50,000, otherwise the value for 50,000 is missen.
+Let's break down what is happening in the code above as it relates to the dependency "datetime". The datetime module comes with our Python installation.
 
-+++ In Deliverable 2, Outcomes_vs_Goals, it tooks a few trials to get used to using the COUNTIFS() with the multiple criteria (notice the S at the end of COUNTIFS)
+To use the datetime module all we need to do is to import it using import datetime.
+In line 4, we declare the now variable to hold the time right "now".
+The now variable is set equal to datetime.datetime.now(), where:
+The first datetime is the datetime module, (first doll).
+The second datetime is the datetime class (second doll).
+Then we use the datetime attribute, now(), (third doll) on the datetime class, i.e., datetime.now(), to get the current time.
+When we run this code, the output will be the current time at the moment the code is run, and will look similar to the following: 
 
-Results
-Deliverable 1 Requirements
-You will earn a perfect score for Deliverable 1 by completing all requirements below:
+The time right now is 2019-09-18 14:11:42.394131
+To reduce the confusion on importing a module with the same name as a class we can use an abbreviated alias dt for the datetime module.
 
-A "Years" column is created based on the "Date Created Conversion" column in the Kickstarter spreadsheet (10 pt).
-A pivot table is created in a new worksheet labeled "Theater Outcomes by Launch Date" (5 pt).
-The pivot table filters on "Parent Category" and "Years" (10 pt).
-The columns, rows, and values in the pivot table fields are correctly populated (10 pt).
-The "Parent Category" is filtered on "theater" (5 pt).
-The row labels are changed to display the months of the year, and the campaign outcomes are sorted in descending order (5 pt).
-A line chart is created showing the number of successful, failed, or canceled projects by month, it has a title, and it is saved as Theater_Outcomes_vs_Launch.png (5 pt).
-+++ This was all done and submitted
+# Import the datetime class from the datetime module.
+import datetime as dt
+# Use the now() attribute on the datetime class to get the present time.
+now = dt.datetime.now()
+# Print the present time.
+print("The time right now is ", now)
 
-Theater_Outcomes_vs_Launch.png 
-![]
-https://github.com/Dybondzy/Dinah---KickStarter---Analysis/Theater_Outcomes_vs_Launch.png
-Outcomes_vs_Goals.png 
-![]
-https://github.com/Dybondzy/Dinah---KickStarter---Analysis/Outcomes_vs_Goals.png
+To see all the functions available in the csv module, follow these steps:
 
-Deliverable 2 Requirements
-You will earn a perfect score for Deliverable 2 by completing all requirements below:
+Launch the Python interpreter.
+Type import csv to import the module.
+Press Enter.
+Type dir(csv). The "dir" is short for "directory".
 
-A new sheet is created with eight columns and twelve rows, according to the instructions (3 pt).
-The COUNTIFS() function is used to populate the "Number Successful," "Number Failed," and "Number Canceled" columns, based on the project "outcome," the "goal" amount using the goal ranges in Step 3, and the Subcategory "plays" (15 pt).
-The SUM() function is used on each row to add the "Number Successful," "Number Failed," and "Number Canceled" columns to populate the "Total Projects" column (3 pt).
-The percentages of successful, failed, and canceled projects are calculated based on the data from the "Total Projects," "Number Successful," "Number Failed," and "Number Canceled" columns (3 pt).
-A line chart is created and saved as Outcomes_vs_Goals.png with the goal-amount ranges on the x-axis, the percentage of successful, failed, or canceled projects on the y-axis, and an appropriate title (6 pt).
-+++ This was all done and submitted 
+After providing the file path in our Python script, we will be able to open and read the file. When the program reads the file, it creates a file object in the computer's memory, which provides a way for the program to work with that file. In our script, we can use a variable to reference the file object.
 
-Your written analysis must contain three sections:
-Overview of Project: Explain the purpose of this analysis.
+The general format for opening a file is, file_variable = open(filename, mode).
 
-Analysis and Challenges: Explain how you performed your analysis using images and links to code, as well as any challenges you encountered and how you overcame them. If you had no challenges, describe any possible challenges or difficulties that could be encountered.
+Let's break down what each component is doing in the general format.
 
-Results: Answer the following questions in complete and coherent sentences.
+file_variable is the name of the variable that will reference the file object.
+filename is a string specifying the name of the file.
+mode is a string specifying the mode for reading or writing the file object. The possible modes are:
+"r": Open a file to be read.
+"w": Open a file to write to it. This will overwrite an existing file and create a file if one does not already exist.
+"x": Open a file for exclusive creation. If the file does not exist, it will not create one.
+"a": Open a file to append data to an existing file. If a file does not exist, it creates one, if a file has been created the data will be added to the file.
+"+": Open a file for reading and writing.
+Now that we know how to open a file, we need to open our election_results.csv file and read the data in the file.
 
-What are two conclusions you can draw about the Theater Outcomes by Launch Date? +++ The 2 conclusions that can be drawn about the Teather Outcomes by Launch Date are: a. May is a good time for Theater b. October is a bad time for Theater
+Inside the parentheses of the join() function, we will add the folder and file to join together. In this case, we'll add the Resources folder and election_results.csv separated by a comma, like this:
 
-What can you conclude about the Outcomes based on Goals? +++ The Outcome on Goals that ca be concluded is a. To be successfull, have goals from less than 1000 to 5,000 b. To fail, your goals are around 1,000 to 5,000 c. If your goal is between 1000 and 5000, you have chance a 2 in 3 chance of success
+os.path.join("Resources", "election_results.csv")
 
-What are some limitations of this dataset? +++ The limitations of this dataset we are working with data for Theater and Plays
+Then, we use a filename variable to reference the path to election_data.csv, like this:
 
-What are some other possible tables and/or graphs that we could create? +++ The possible tables and graphs that could be created at: a. Outcome based on goals for drama, musical, or people b. Launch date and drama, musical, people c. Theater can include plays and having data on other types of theater, like drama, musical, and people, gives a broader picture
+file_to_load = os.path.join("Resources", "election_results.csv")
 
-Deliverable 3 Requirements
-Structure, Organization, and Formatting (8 points) The written analysis has the following structure, organization, and formatting: a. There is a title, and there are multiple paragraphs (2 pt). b. Each paragraph has a heading (2 pt). c. There are subheadings to break up text (2 pt). d. Links are working, and images are correct and displayed where appropriate (2 pt). e. Analysis (12 points)
+Let's put all of this to practical use! In the VS Code PyPoll.py file, complete the following steps:
 
-The written analysis has the following: a. Overview of Project b. The purpose and background are well defined (2 pt).
+Import the csv and os modules.
+Add the filename variable that references the path to election_results.csv.
+Open the election_results.csv using the with statement as the filename object, election_data.
+Print the filename object.
+Your PyPoll.py file should look like this:
 
-Analysis and Challenges a. The overview of the analysis is well described with screenshots (2 pt). b. Challenges or difficulties that were encountered, and how they were overcome, are well explained. c. If there were no difficulties, describe any possible challenges or difficulties that could be encountered (2 pt).
+import csv
+import os
+# Assign a variable for the file to load and the path.
+file_to_load = os.path.join("Resources", "election_results.csv")
+# Open the election results and read the file.
+with open(file_to_load) as election_data:
 
-Results a. Two conclusions are made about the Theater Outcomes by Launch Date (2 pt). b. One conclusion is made about the Outcomes based on Goals (2 pt). c. There is a summary of the limitations of the dataset, and there is a recommendation for additional tables or graphs (2 pt).
+    # Print the file object.
+     print(election_data)
+When we run this file in the VS Code terminal, the output is similar to when we used the direct path for the file variable:
 
-+++ This is all done and submitted
+<open file 'Resources/election_results.csv', mode 'r' at 0x10479c780>
 
-READEME_Kickstarter_Challenge.md 
-![]
-https://github.com/Dybondzy/Dinah---KickStarter---Analysiss/README_Kickstarter_Challenge.md
+Open election_analysis.txt and you'll see that it's empty. As we perform the election analysis, we'll write data to this file. For now, let's practice adding some simple data to this file and saving it in the "analysis" folder.
 
-What are two conclusions you can draw about the Outcomes based on Launch Date? +++ The 2 conclusions that can be drawn about the Teather Outcomes by Launch Date are: a. May is a good time for Theater b. October is a bad time for Theater
+In election_analysis.txt add "Hello World" to the first line by adding the following code to PyPoll.py and running the file in VS Code.
 
-What can you conclude about the Outcomes based on Goals? +++ The Outcome on Goals that ca be concluded is a. To be successfull, have goals from less than 1000 to 5,000 b. To fail, your goals are around 1,000 to 5,000 c. If your goal is between 1000 and 5000, you have chance a 2 in 3 chance of success
+# Create a filename variable to a direct or indirect path to the file.
+file_to_save = os.path.join("analysis", "election_analysis.txt")
 
-What are some limitations of this dataset? +++ The limitations of this dataset we are working with data for Theater and Plays
+# Using the with statement open the file as a text file.
+outfile = open(file_to_save, "w")
+# Write some data to the file.
+outfile.write("Hello World")
 
-What are some other possible tables and/or graphs that we could create? +++ The possible tables and graphs that could be created at: a. Outcome based on goals for drama, musical, or people b. Launch date and drama, musical, people c. Theater can include plays and having data on other types of theater, like drama, musical, and people, gives a broader picture
+# Close the file
+outfile.close()
+Here's what's happening in this code:
 
-+++ Final File Submitted is compressed and renamed from KickStarter_Challenge to KickStarter_Challenge - DinahBondzie
+After we create the file_to_save variable, we set the open(file_to_save, "w") to a filename variable, outfile.
+Then, we use the filename variable to write "Hello World" to the file using the write() function from the os module.
+Lastly, we use outfile.close() to close the file.
+When we execute this file and open election_analysis.txt, we see the string Hello World in the first line.
 
-![]
-https://github.com/Dybondzy/Dinah---KickStarter---Analysis/KickStarter_Challenge - DinahBondzie.xlsx
+Now it's time to read the election_results.csv file. As a reminder, the code in our PyPoll.py file should look similar to this code: 
+
+# Add our dependencies.
+import csv
+import os
+# Assign a variable to load a file from a path.
+file_to_load = os.path.join("Resources", "election_results.csv")
+# Assign a variable to save the file to a path.
+file_to_save = os.path.join("analysis", "election_analysis.txt")
+
+# Open the election results and read the file.
+with open(file_to_load) as election_data:
+
+    # To do: read and analyze the data here.
+Next, we'll use the reader function to read election_data.csv.
+
+While this output was being generated, two things happened:
+
+We did not see the headers or columns printed because the output was generated very quickly.
+Each row in the CSV file was printed out as a list.
+
+At this point, PyPoll.py should look like this:
+
+# Add our dependencies.
+import csv
+import os
+# Assign a variable to load a file from a path.
+file_to_load = os.path.join("Resources", "election_results.csv")
+# Assign a variable to save the file to a path.
+file_to_save = os.path.join("analysis", "election_analysis.txt")
+
+# Open the election results and read the file.
+with open(file_to_load) as election_data:
+    file_reader = csv.reader(election_data)
+
+    # Read and print the header row.
+    headers = next(file_reader)
+    print(headers)
+    
+    code to GitHub. Committing early and often is the best practice to save your work on projects. Plus, Seth and Tom said they might look over your work before tomorrow, so you'll want to update your repository and email them the link, if you have not done so yet.
+Save PyPoll.py to the Election_Analysis folder. To commit your code to your GitHub repository, follow the steps associated with your operating system.
+
+Check out the macOS instructions below, or jump to the Windows instructions.
+

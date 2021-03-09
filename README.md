@@ -36,8 +36,18 @@ Add a vote count for each candidate.
 Get the total votes for each candidate.
 Get the total votes cast for the election.
 
+-----------------------------------
+
+If you open the file: https://github.com/Dybondzy/stocks-analysis/blob/main/VBA_Challenge.xlsm
+There are buttons that will give you the speed of the code in:
+  Results for running 2017 data is https://github.com/Dybondzy/stocks-analysis/blob/main/VBA_Challenge_2017.png
+  Results for running 2018 data is https://github.com/Dybondzy/stocks-analysis/blob/main/VBA_Challenge_2018.png
+
+-----------------------------------
+
 
 Launch VS Code and create a new file named PyPoll.py. Create a high-level list of the necessary steps given to you using pseudocode.
+The file PyPoll.py is located at:
 
 The election_results.csv file should be located in the Resources folder
 

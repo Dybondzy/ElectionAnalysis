@@ -1,5 +1,5 @@
-# ElectionAnalysis
 # Dinah---ElectionAnalysis
+
 3rd Project on Boot Camp Exercise for Data Analystics
 
 In this project, our final Python script will need to be able to deliver the following information when the script is run: 
@@ -9,6 +9,8 @@ A complete list of candidates who received votes
 Total number of votes each candidate received
 Percentage of votes each candidate won
 The winner of the election based on popular vote
+
+# Analysis
 
 To facilitate the design process, programmers use pseudocode to create models or flowcharts for their programs. Pseudocode is like a roadmap of what you think your code will look like or the steps you'll take to complete the task at hand.
 
@@ -24,6 +26,9 @@ Close the lid.
 These well-defined, logical steps that are sequentially ordered is an example of an algorithm.
 
 Similarly, a programmer or analyst may write the steps to count the votes of an election like this:
+
+
+## Recommended Steps to follow
 
 Open the data file.
 Write down the names of all the candidates.

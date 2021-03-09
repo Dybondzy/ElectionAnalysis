@@ -110,6 +110,7 @@ After we create the file_to_save variable, we set the open(file_to_save, "w") to
 Then, we use the filename variable to write "Hello World" to the file using the write() function from the os module.
 Lastly, we use outfile.close() to close the file.
 When we execute this file and open election_analysis.txt, we see the string Hello World in the first line.
+https://github.com/Dybondzy/ElectionAnalysis/blob/main/election_results.txt
 
 Now it's time to read the election_results.csv file. As a reminder, the code in our PyPoll.py file should look similar to this code: 
 

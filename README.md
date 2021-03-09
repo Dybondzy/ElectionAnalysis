@@ -50,8 +50,7 @@ Launch VS Code and create a new file named PyPoll.py. Create a high-level list o
 The file PyPoll.py is located at: https://github.com/Dybondzy/ElectionAnalysis/blob/main/PyPoll.ipynb
 
 The election_results.csv file should be located in the Resources folder
-Here's a copy of the file election_results.csv: 
-
+Here's a copy of the file election_results.csv: https://github.com/Dybondzy/ElectionAnalysis/blob/main/election_results.csv
 
 Let's break down what is happening in the code above as it relates to the dependency "datetime". The datetime module comes with our Python installation.
 

@@ -2,6 +2,8 @@
 
 3rd Project on Boot Camp Exercise for Data Analystics
 
+# Purpose
+
 In this project, our final Python script will need to be able to deliver the following information when the script is run: 
 
 Total number of votes cast
@@ -36,18 +38,8 @@ Add a vote count for each candidate.
 Get the total votes for each candidate.
 Get the total votes cast for the election.
 
------------------------------------
-
-If you open the file: https://github.com/Dybondzy/stocks-analysis/blob/main/VBA_Challenge.xlsm
-There are buttons that will give you the speed of the code in:
-  Results for running 2017 data is https://github.com/Dybondzy/stocks-analysis/blob/main/VBA_Challenge_2017.png
-  Results for running 2018 data is https://github.com/Dybondzy/stocks-analysis/blob/main/VBA_Challenge_2018.png
-
------------------------------------
-
-
 Launch VS Code and create a new file named PyPoll.py. Create a high-level list of the necessary steps given to you using pseudocode.
-The file PyPoll.py is located at: https://github.com/Dybondzy/ElectionAnalysis/blob/main/PyPoll.ipynb
+The file PyPoll.py is located at: https://github.com/Dybondzy/ElectionAnalysis/blob/main/PyPoll.py
 
 The election_results.csv file should be located in the Resources folder
 Here's a copy of the file election_results.csv: https://github.com/Dybondzy/ElectionAnalysis/blob/main/election_results.csv
@@ -62,16 +54,17 @@ The second datetime is the datetime class (second doll).
 Then we use the datetime attribute, now(), (third doll) on the datetime class, i.e., datetime.now(), to get the current time.
 When we run this code, the output will be the current time at the moment the code is run, and will look similar to the following: 
 
-The time right now is 2019-09-18 14:11:42.394131
+The time should look like this: 2019-09-18 14:11:42.394131
 To reduce the confusion on importing a module with the same name as a class we can use an abbreviated alias dt for the datetime module.
 
-# Import the datetime class from the datetime module.
+### Import the datetime class from the datetime module.
 import datetime as dt
-# Use the now() attribute on the datetime class to get the present time.
+### Use the now() attribute on the datetime class to get the present time.
 now = dt.datetime.now()
-# Print the present time.
+### Print the present time.
 print("The time right now is ", now)
 
+## Project Overview
 To see all the functions available in the csv module, follow these steps:
 
 Launch the Python interpreter.
@@ -109,36 +102,9 @@ Import the csv and os modules.
 Add the filename variable that references the path to election_results.csv.
 Open the election_results.csv using the with statement as the filename object, election_data.
 Print the filename object.
-Your PyPoll.py file should look like this:
 
-import csv
-import os
-# Assign a variable for the file to load and the path.
-file_to_load = os.path.join("Resources", "election_results.csv")
-# Open the election results and read the file.
-with open(file_to_load) as election_data:
-
-    # Print the file object.
-     print(election_data)
-When we run this file in the VS Code terminal, the output is similar to when we used the direct path for the file variable:
-
-<open file 'Resources/election_results.csv', mode 'r' at 0x10479c780>
-
-Open election_analysis.txt and you'll see that it's empty. As we perform the election analysis, we'll write data to this file. For now, let's practice adding some simple data to this file and saving it in the "analysis" folder.
-
-In election_analysis.txt add "Hello World" to the first line by adding the following code to PyPoll.py and running the file in VS Code.
-
-# Create a filename variable to a direct or indirect path to the file.
-file_to_save = os.path.join("analysis", "election_analysis.txt")
-
-# Using the with statement open the file as a text file.
-outfile = open(file_to_save, "w")
-# Write some data to the file.
-outfile.write("Hello World")
-
-# Close the file
-outfile.close()
-Here's what's happening in this code:
+Your PyPoll.py file should look like this: Here's a copy of the file election_results.csv: https://github.com/Dybondzy/ElectionAnalysis/blob/main/PyPoll.py
+(and at the bottom of these notes)
 
 After we create the file_to_save variable, we set the open(file_to_save, "w") to a filename variable, outfile.
 Then, we use the filename variable to write "Hello World" to the file using the write() function from the os module.
@@ -147,44 +113,13 @@ When we execute this file and open election_analysis.txt, we see the string Hell
 
 Now it's time to read the election_results.csv file. As a reminder, the code in our PyPoll.py file should look similar to this code: 
 
-# Add our dependencies.
-import csv
-import os
-# Assign a variable to load a file from a path.
-file_to_load = os.path.join("Resources", "election_results.csv")
-# Assign a variable to save the file to a path.
-file_to_save = os.path.join("analysis", "election_analysis.txt")
-
-# Open the election results and read the file.
-with open(file_to_load) as election_data:
-
-    # To do: read and analyze the data here.
 Next, we'll use the reader function to read election_data.csv.
 
 While this output was being generated, two things happened:
 
-We did not see the headers or columns printed because the output was generated very quickly.
 Each row in the CSV file was printed out as a list.
 
-At this point, PyPoll.py should look like this:
-
-# Add our dependencies.
-import csv
-import os
-# Assign a variable to load a file from a path.
-file_to_load = os.path.join("Resources", "election_results.csv")
-# Assign a variable to save the file to a path.
-file_to_save = os.path.join("analysis", "election_analysis.txt")
-
-# Open the election results and read the file.
-with open(file_to_load) as election_data:
-    file_reader = csv.reader(election_data)
-
-    # Read and print the header row.
-    headers = next(file_reader)
-    print(headers)
-    
-    code to GitHub. Committing early and often is the best practice to save your work on projects. Plus, Seth and Tom said they might look over your work before tomorrow, so you'll want to update your repository and email them the link, if you have not done so yet.
+Code to GitHub. Committing early and often is the best practice to save your work on projects. Plus, Seth and Tom said they might look over your work before tomorrow, so you'll want to update your repository and email them the link, if you have not done so yet.
 Save PyPoll.py to the Election_Analysis folder. To commit your code to your GitHub repository, follow the steps associated with your operating system.
 
 ----------------------------------------------------
@@ -193,80 +128,80 @@ Save PyPoll.py to the Election_Analysis folder. To commit your code to your GitH
 located at:  https://github.com/Dybondzy/ElectionAnalysis/blob/main/PyPoll.ipynb
 
 
-# Add our dependencies.
+'# Add our dependencies.
 import csv
 import os
-# Assign a variable to load a file from a path.
+'# Assign a variable to load a file from a path.
 file_to_load = os.path.join("Resources", "election_results.csv")
-# Assign a variable to save the file to a path.
+'# Assign a variable to save the file to a path.
 file_to_save = os.path.join("analysis", "election_analysis.txt")
 
-# Initialize a total vote counter.
+'# Initialize a total vote counter.
 total_votes = 0
 
-# Candidate options and candidate votes
+'# Candidate options and candidate votes
 candidate_options = []
-# 1. Declare the empty dictionary.
+'# 1. Declare the empty dictionary.
 candidate_votes = {}
 
-# Open the election results and read the file.
+'# Open the election results and read the file.
 with open(file_to_load) as election_data:
     file_reader = csv.reader(election_data)
 
-    # Read the header row.
+    '# Read the header row.
     headers = next(file_reader)
 
-    # Print each row in the CSV file.
+    '# Print each row in the CSV file.
     for row in file_reader:
-        # Add to the total vote count.
+        '# Add to the total vote count.
         total_votes += 1
 
-        # Print the candidate name from each row.
+       ' # Print the candidate name from each row.
         candidate_name = row[2]
 
         if candidate_name not in candidate_options:
 
-            # Add the candidate name to the candidate list.
+           ' # Add the candidate name to the candidate list.
             candidate_options.append(candidate_name)
 
-           # Begin tracking that candidate's vote count.
+          ' # Begin tracking that candidate's vote count.
             candidate_votes[candidate_name] = 0
 
-        # Add a vote to that candidate's count
+        '# Add a vote to that candidate's count
         candidate_votes[candidate_name] += 1
 
 
-# Print the candidate vote dictionary.
+'# Print the candidate vote dictionary.
 print(candidate_votes)
-# Determine the percentage of votes for each candidate by looping through the counts.
-# Iterate through the candidate list.
+'# Determine the percentage of votes for each candidate by looping through the counts.
+'# Iterate through the candidate list.
 for candidate_name in candidate_votes:
-    # Retrieve vote count of a candidate.
+   ' # Retrieve vote count of a candidate.
     votes = candidate_votes[candidate_name]
-    # Calculate the percentage of votes.
+    '# Calculate the percentage of votes.
     vote_percentage = float(votes) / float(total_votes) * 100
 
-    #  To do: print out each candidate's name, vote count, and percentage of
-    # votes to the terminal.
+    '#  To do: print out each candidate's name, vote count, and percentage of
+   ' # votes to the terminal.
 
-# Winning Candidate and Winning Count Tracker
+'# Winning Candidate and Winning Count Tracker
 winning_candidate = ""
 winning_count = 0
 winning_percentage = 0
-# Determine winning vote count and candidate
-# 1. Determine if the votes are greater than the winning count.
+'# Determine winning vote count and candidate
+'# 1. Determine if the votes are greater than the winning count.
 if (votes > winning_count) and (vote_percentage > winning_percentage):
-     # 2. If true then set winning_count = votes and winning_percent =
-     # vote_percentage.
+     '# 2. If true then set winning_count = votes and winning_percent =
+    ' # vote_percentage.
      winning_count = votes
      winning_percentage = round(vote_percentage,1)
-     # 3. Set the winning_candidate equal to the candidate's name.
+     '# 3. Set the winning_candidate equal to the candidate's name.
      winning_candidate = candidate_name
     
-#  To do: print out the winning candidate, vote count and percentage to
-#   terminal.
-# To do: print out each candidate's name, vote count, and percentage of
-# votes to the terminal.
+'#  To do: print out the winning candidate, vote count and percentage to
+'#   terminal.
+'# To do: print out each candidate's name, vote count, and percentage of
+'# votes to the terminal.
 print(f"{candidate_name}: {vote_percentage:.1f}% ({votes:,})\n")
 
 winning_candidate_summary = (
@@ -276,6 +211,8 @@ winning_candidate_summary = (
     f"Winning Percentage: {winning_percentage:.1f}%\n"
     f"-------------------------\n")
 print(winning_candidate_summary)
+
+----------------------------------------------------
 
 ## Summary
 

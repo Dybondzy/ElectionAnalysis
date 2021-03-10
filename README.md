@@ -13,31 +13,21 @@ In this project, our final Python script will need to be able to deliver the fol
 -   The winner of the election based on popular vote
 
 
-# Analysis
+# Analysis --- Project Overview
 
 To facilitate the design process, programmers use pseudocode to create models or flowcharts for their programs. Pseudocode is like a roadmap of what you think your code will look like or the steps you'll take to complete the task at hand.
 
-Pseudo means "fake," so pseudocode is essentially fake code. Pseudocode is an informal language that has no syntax rules and is not meant to be executed. The point of using pseudocode is to focus on the overall design of the program.
-
-For example, let's say someone asks you how to wash clothes. You might break down this task into a series of basic steps, like this:
-
-Open the lid of the washing machine.
-Put clothes in the washing machine.
-Turn on the water.
-Add detergent.
-Close the lid.
-These well-defined, logical steps that are sequentially ordered is an example of an algorithm.
-
-Similarly, a programmer or analyst may write the steps to count the votes of an election like this:
+A programmer or analyst may write the steps to count the votes of an election like this:
 
 
 ## Recommended Steps to follow
 
-Open the data file.
-Write down the names of all the candidates.
-Add a vote count for each candidate.
-Get the total votes for each candidate.
-Get the total votes cast for the election.
+-   Open the data file.
+-   Write down the names of all the candidates.
+-   Add a vote count for each candidate.
+-   Get the total votes for each candidate.
+-   Get the total votes cast for the election.
+
 
 Launch VS Code and create a new file named PyPoll.py. Create a high-level list of the necessary steps given to you using pseudocode.
 The file PyPoll.py is located at: https://github.com/Dybondzy/ElectionAnalysis/blob/main/PyPoll.py
@@ -47,86 +37,93 @@ Here's a copy of the file election_results.csv: https://github.com/Dybondzy/Elec
 
 Let's break down what is happening in the code above as it relates to the dependency "datetime". The datetime module comes with our Python installation.
 
-To use the datetime module all we need to do is to import it using import datetime.
-In line 4, we declare the now variable to hold the time right "now".
-The now variable is set equal to datetime.datetime.now(), where:
-The first datetime is the datetime module, (first doll).
-The second datetime is the datetime class (second doll).
-Then we use the datetime attribute, now(), (third doll) on the datetime class, i.e., datetime.now(), to get the current time.
-When we run this code, the output will be the current time at the moment the code is run, and will look similar to the following: 
+-   To use the datetime module all we need to do is to import it using import datetime.
+-   In line 4, we declare the now variable to hold the time right "now".
+-   The now variable is set equal to datetime.datetime.now(), where:
+-   The first datetime is the datetime module, (first doll).
+-   The second datetime is the datetime class (second doll).
+-   Then we use the datetime attribute, now(), (third doll) on the datetime class, i.e., datetime.now(), to get the current time.
+-   When we run this code, the output will be the current time at the moment the code is run, and will look similar to the following: 
 
-The time should look like this: 2019-09-18 14:11:42.394131
-To reduce the confusion on importing a module with the same name as a class we can use an abbreviated alias dt for the datetime module.
+-   The time should look like this: 2019-09-18 14:11:42.394131
+-   To reduce the confusion on importing a module with the same name as a class we can use an abbreviated alias dt for the datetime module.
 
-### Import the datetime class from the datetime module.
-import datetime as dt
-### Use the now() attribute on the datetime class to get the present time.
-now = dt.datetime.now()
-### Print the present time.
-print("The time right now is ", now)
 
-## Project Overview
-To see all the functions available in the csv module, follow these steps:
+-   Import the datetime class from the datetime module.
+    import datetime as dt
+-   Use the now() attribute on the datetime class to get the present time.
+    now = dt.datetime.now()
+-   Print the present time.
+    print("The time right now is ", now)
 
-Launch the Python interpreter.
-Type import csv to import the module.
-Press Enter.
-Type dir(csv). The "dir" is short for "directory".
+-   To see all the functions available in the csv module, follow these steps:
 
-After providing the file path in our Python script, we will be able to open and read the file. When the program reads the file, it creates a file object in the computer's memory, which provides a way for the program to work with that file. In our script, we can use a variable to reference the file object.
+    -   Launch the Python interpreter.
+    -   Type import csv to import the module.
+    -   Press Enter.
+    -   Type dir(csv). The "dir" is short for "directory".
 
-The general format for opening a file is, file_variable = open(filename, mode).
+-   After providing the file path in our Python script, we will be able to open and read the file. 
+-   When the program reads the file, it creates a file object in the computer's memory, which provides a way for the program to work with that file. 
+-   In our script, we can use a variable to reference the file object.
 
-Let's break down what each component is doing in the general format.
+-   The general format for opening a file is, file_variable = open(filename, mode).
 
-file_variable is the name of the variable that will reference the file object.
-filename is a string specifying the name of the file.
-mode is a string specifying the mode for reading or writing the file object. The possible modes are:
-"r": Open a file to be read.
-"w": Open a file to write to it. This will overwrite an existing file and create a file if one does not already exist.
-"x": Open a file for exclusive creation. If the file does not exist, it will not create one.
-"a": Open a file to append data to an existing file. If a file does not exist, it creates one, if a file has been created the data will be added to the file.
-"+": Open a file for reading and writing.
-Now that we know how to open a file, we need to open our election_results.csv file and read the data in the file.
+-   Let's break down what each component is doing in the general format.
 
-Inside the parentheses of the join() function, we will add the folder and file to join together. In this case, we'll add the Resources folder and election_results.csv separated by a comma, like this:
+-   file_variable is the name of the variable that will reference the file object.
+-   filename is a string specifying the name of the file.
+-   mode is a string specifying the mode for reading or writing the file object. The possible modes are:
+-   "r": Open a file to be read.
+-   "w": Open a file to write to it. This will overwrite an existing file and create a file if one does not already exist.
+-   "x": Open a file for exclusive creation. If the file does not exist, it will not create one.
+-   "a": Open a file to append data to an existing file. If a file does not exist, it creates one, if a file has been created the data will be added to the file.
+-   "+": Open a file for reading and writing.
+-   Now that we know how to open a file, we need to open our election_results.csv file and read the data in the file.
 
-os.path.join("Resources", "election_results.csv")
+-   Inside the parentheses of the join() function, we will add the folder and file to join together. 
+-   In this case, we'll add the Resources folder and election_results.csv separated by a comma, like this:
 
-Then, we use a filename variable to reference the path to election_data.csv, like this:
+-   os.path.join("Resources", "election_results.csv")
 
-file_to_load = os.path.join("Resources", "election_results.csv")
+-   Then, we use a filename variable to reference the path to election_data.csv, like this:
 
-Let's put all of this to practical use! In the VS Code PyPoll.py file, complete the following steps:
+-   file_to_load = os.path.join("Resources", "election_results.csv")
 
-Import the csv and os modules.
-Add the filename variable that references the path to election_results.csv.
-Open the election_results.csv using the with statement as the filename object, election_data.
-Print the filename object.
+-   Let's put all of this to practical use! In the VS Code PyPoll.py file, complete the following steps:
 
-Your PyPoll.py file should look like this: Here's a copy of the file election_results.csv: https://github.com/Dybondzy/ElectionAnalysis/blob/main/PyPoll.py
+-   Import the csv and os modules.
+-   Add the filename variable that references the path to election_results.csv.
+-   Open the election_results.csv using the with statement as the filename object, election_data.
+-   Print the filename object.
+
+-   Your PyPoll.py file should look like this: Here's a copy of the file election_results.csv: https://github.com/Dybondzy/ElectionAnalysis/blob/main/PyPoll.py
 (and at the bottom of these notes)
 
-After we create the file_to_save variable, we set the open(file_to_save, "w") to a filename variable, outfile.
-Then, we use the filename variable to write "Hello World" to the file using the write() function from the os module.
-Lastly, we use outfile.close() to close the file.
-When we execute this file and open election_analysis.txt, we see the string Hello World in the first line.
-https://github.com/Dybondzy/ElectionAnalysis/blob/main/election_results.txt
+-   After we create the file_to_save variable, we set the open(file_to_save, "w") to a filename variable, outfile.
+-   Then, we use the filename variable to write "Hello World" to the file using the write() function from the os module.
+-   Lastly, we use outfile.close() to close the file.
+-   When we execute this file and open election_analysis.txt, we see the string Hello World in the first line.
+    https://github.com/Dybondzy/ElectionAnalysis/blob/main/election_results.txt
 
-Now it's time to read the election_results.csv file. As a reminder, the code in our PyPoll.py file should look similar to this code: 
+-   Now it's time to read the election_results.csv file. As a reminder, the code in our PyPoll.py file should look similar to this code: 
 
-Next, we'll use the reader function to read election_data.csv.
+-   Next, we'll use the reader function to read election_data.csv.
 
-While this output was being generated, two things happened:
+-   While this output was being generated, two things happened:
 
-Each row in the CSV file was printed out as a list.
+-   Each row in the CSV file was printed out as a list.
 
-Code to GitHub. Committing early and often is the best practice to save your work on projects. Plus, Seth and Tom said they might look over your work before tomorrow, so you'll want to update your repository and email them the link, if you have not done so yet.
-Save PyPoll.py to the Election_Analysis folder. To commit your code to your GitHub repository, follow the steps associated with your operating system.
+-   Code to GitHub. Committing early and often is the best practice to save your work on projects. 
+-   Plus, Seth and Tom said they might look over your work before tomorrow, so you'll want to update your repository and email them the link, if you have not done so yet.
+-   Save PyPoll.py to the Election_Analysis folder. To commit your code to your GitHub repository, follow the steps associated with your operating system.
 
 ----------------------------------------------------
 
-# The PyPoll Code --- Deliverable 1
+## Summary
+
+
+### The PyPoll Code --- Deliverable 1
 located at:  https://github.com/Dybondzy/ElectionAnalysis/blob/main/PyPoll.ipynb
 
 
@@ -216,6 +213,17 @@ print(winning_candidate_summary)
 
 ----------------------------------------------------
 
-## Summary
+
+### Sample Results
+
+The time right now is  2021-03-09 22:53:51.831051
+{'Charles Casper Stockham': 85213, 'Diana DeGette': 272892, 'Raymon Anthony Doane': 11606}
+Raymon Anthony Doane: 3.1% (11,606)
+
+-------------------------
+Winner: Raymon Anthony Doane
+Winning Vote Count: 11,606
+Winning Percentage: 3.1%
+-------------------------
 
 

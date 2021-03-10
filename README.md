@@ -216,14 +216,15 @@ print(winning_candidate_summary)
 
 ### Sample Results
 
-The time right now is  2021-03-09 22:53:51.831051
-{'Charles Casper Stockham': 85213, 'Diana DeGette': 272892, 'Raymon Anthony Doane': 11606}
-Raymon Anthony Doane: 3.1% (11,606)
-
--------------------------
-Winner: Raymon Anthony Doane
-Winning Vote Count: 11,606
-Winning Percentage: 3.1%
--------------------------
-
+'The time right now is  2021-03-09 22:53:51.831051
+'{'Charles Casper Stockham': 85213, 'Diana DeGette': 272892, 'Raymon Anthony Doane': 11606}
+'Raymon Anthony Doane: 3.1% (11,606)
+'
+'-------------------------
+'Winner: Raymon Anthony Doane
+'Winning Vote Count: 11,606
+'Winning Percentage: 3.1%
+'-------------------------
+'
+'
 
